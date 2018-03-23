@@ -15,7 +15,7 @@ var wiki = require('./wiki');
 var app = express();
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://NMinter:n12m32ADY@ds211309.mlab.com:11309/local_library';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://NMinter:n12m32ADY@ds211309.mlab.com:11309/local_library';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
